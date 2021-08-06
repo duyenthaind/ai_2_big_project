@@ -22,7 +22,7 @@ namespace HCG_Nhom4
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            eventDao.Insert(txtsukien.Text, txtmota.Text, cbCategory.SelectedValue.ToString());
+            eventDao.Insert(txtId.Text, txtContent.Text, cbCategory.SelectedValue.ToString());
             load();
         }
 
@@ -33,13 +33,13 @@ namespace HCG_Nhom4
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            eventDao.Update(txtsukien.Text, txtmota.Text, cbCategory.SelectedValue.ToString());
+            eventDao.Update(txtId.Text, txtContent.Text, cbCategory.SelectedValue.ToString());
             load();
         }
 
         private void btnremove_Click(object sender, EventArgs e)
         {
-            eventDao.Delete(txtsukien.Text);
+            eventDao.Delete(txtId.Text);
             load();
         }
 
@@ -48,16 +48,16 @@ namespace HCG_Nhom4
             int index = e.RowIndex;
             if (index > -1)
             {
-                txtsukien.Text = dgvsukien.Rows[index].Cells[0].Value.ToString();
-                txtmota.Text = dgvsukien.Rows[index].Cells[1].Value.ToString();
-                cbCategory.SelectedValue = dgvsukien.Rows[index].Cells[2].Value.ToString();
+                txtId.Text = dgvMain.Rows[index].Cells[0].Value.ToString();
+                txtContent.Text = dgvMain.Rows[index].Cells[1].Value.ToString();
+                cbCategory.SelectedValue = dgvMain.Rows[index].Cells[2].Value.ToString();
             }
         }
 
         public void load()
         {
             var dataTable = eventDao.GetDisplayData();
-            dgvsukien.DataSource = dataTable;
+            dgvMain.DataSource = dataTable;
             cbCategory.DataSource = categoryDao.GetAllData();
             cbCategory.DisplayMember = "name";
             cbCategory.ValueMember = "id";

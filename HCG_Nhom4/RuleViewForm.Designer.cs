@@ -30,11 +30,11 @@ namespace HCG_Nhom4
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RuleViewForm));
-            this.dgvluat = new System.Windows.Forms.DataGridView();
+            this.dgvRule = new System.Windows.Forms.DataGridView();
             this.maluat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvsukien2 = new System.Windows.Forms.DataGridView();
+            this.dgvEvent = new System.Windows.Forms.DataGridView();
             this.masukien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,35 +47,36 @@ namespace HCG_Nhom4
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.rdosukien = new System.Windows.Forms.RadioButton();
-            this.rdoluat = new System.Windows.Forms.RadioButton();
-            this.btntimkiem = new System.Windows.Forms.Button();
+            this.rdoEvent = new System.Windows.Forms.RadioButton();
+            this.rdoRule = new System.Windows.Forms.RadioButton();
+            this.btnsearch = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txttimkiem = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize) (this.dgvluat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dgvRule)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.dgvsukien2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dgvEvent)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvluat
+            // dgvRule
             // 
-            this.dgvluat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvluat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.maluat, this.nd});
-            this.dgvluat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvluat.Location = new System.Drawing.Point(2, 19);
-            this.dgvluat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvluat.Name = "dgvluat";
-            this.dgvluat.RowHeadersWidth = 51;
-            this.dgvluat.RowTemplate.Height = 24;
-            this.dgvluat.Size = new System.Drawing.Size(469, 243);
-            this.dgvluat.TabIndex = 0;
-            this.dgvluat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvluat_CellClick);
+            this.dgvRule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.maluat, this.nd});
+            this.dgvRule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRule.Location = new System.Drawing.Point(2, 19);
+            this.dgvRule.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvRule.Name = "dgvRule";
+            this.dgvRule.RowHeadersWidth = 51;
+            this.dgvRule.RowTemplate.Height = 24;
+            this.dgvRule.Size = new System.Drawing.Size(469, 243);
+            this.dgvRule.TabIndex = 0;
+            this.dgvRule.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvluat_CellClick);
             // 
             // maluat
             // 
@@ -95,7 +96,7 @@ namespace HCG_Nhom4
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvluat);
+            this.groupBox1.Controls.Add(this.dgvRule);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox1.Location = new System.Drawing.Point(11, 94);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -106,18 +107,18 @@ namespace HCG_Nhom4
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách luật";
             // 
-            // dgvsukien2
+            // dgvEvent
             // 
-            this.dgvsukien2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvsukien2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.masukien, this.noidung});
-            this.dgvsukien2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvsukien2.Location = new System.Drawing.Point(2, 19);
-            this.dgvsukien2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvsukien2.Name = "dgvsukien2";
-            this.dgvsukien2.RowHeadersWidth = 51;
-            this.dgvsukien2.RowTemplate.Height = 24;
-            this.dgvsukien2.Size = new System.Drawing.Size(469, 216);
-            this.dgvsukien2.TabIndex = 4;
+            this.dgvEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEvent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.masukien, this.noidung});
+            this.dgvEvent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEvent.Location = new System.Drawing.Point(2, 19);
+            this.dgvEvent.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvEvent.Name = "dgvEvent";
+            this.dgvEvent.RowHeadersWidth = 51;
+            this.dgvEvent.RowTemplate.Height = 24;
+            this.dgvEvent.Size = new System.Drawing.Size(469, 216);
+            this.dgvEvent.TabIndex = 4;
             // 
             // masukien
             // 
@@ -138,7 +139,7 @@ namespace HCG_Nhom4
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Controls.Add(this.dgvsukien2);
+            this.groupBox2.Controls.Add(this.dgvEvent);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(9, 364);
@@ -245,53 +246,53 @@ namespace HCG_Nhom4
             this.label4.TabIndex = 4;
             this.label4.Text = "Nhập thông tin tìm kiếm";
             // 
-            // rdosukien
+            // rdoEvent
             // 
-            this.rdosukien.AutoSize = true;
-            this.rdosukien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.rdosukien.Location = new System.Drawing.Point(75, 61);
-            this.rdosukien.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.rdosukien.Name = "rdosukien";
-            this.rdosukien.Size = new System.Drawing.Size(131, 21);
-            this.rdosukien.TabIndex = 3;
-            this.rdosukien.TabStop = true;
-            this.rdosukien.Text = "Tìm kiếm sự kiện";
-            this.rdosukien.UseVisualStyleBackColor = true;
+            this.rdoEvent.AutoSize = true;
+            this.rdoEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.rdoEvent.Location = new System.Drawing.Point(75, 61);
+            this.rdoEvent.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rdoEvent.Name = "rdoEvent";
+            this.rdoEvent.Size = new System.Drawing.Size(131, 21);
+            this.rdoEvent.TabIndex = 3;
+            this.rdoEvent.TabStop = true;
+            this.rdoEvent.Text = "Tìm kiếm sự kiện";
+            this.rdoEvent.UseVisualStyleBackColor = true;
             // 
-            // rdoluat
+            // rdoRule
             // 
-            this.rdoluat.AutoSize = true;
-            this.rdoluat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.rdoluat.Location = new System.Drawing.Point(75, 27);
-            this.rdoluat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.rdoluat.Name = "rdoluat";
-            this.rdoluat.Size = new System.Drawing.Size(109, 21);
-            this.rdoluat.TabIndex = 2;
-            this.rdoluat.TabStop = true;
-            this.rdoluat.Text = "Tìm kiếm luật";
-            this.rdoluat.UseVisualStyleBackColor = true;
+            this.rdoRule.AutoSize = true;
+            this.rdoRule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.rdoRule.Location = new System.Drawing.Point(75, 27);
+            this.rdoRule.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rdoRule.Name = "rdoRule";
+            this.rdoRule.Size = new System.Drawing.Size(109, 21);
+            this.rdoRule.TabIndex = 2;
+            this.rdoRule.TabStop = true;
+            this.rdoRule.Text = "Tìm kiếm luật";
+            this.rdoRule.UseVisualStyleBackColor = true;
             // 
-            // btntimkiem
+            // btnsearch
             // 
-            this.btntimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btntimkiem.Image = ((System.Drawing.Image) (resources.GetObject("btntimkiem.Image")));
-            this.btntimkiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btntimkiem.Location = new System.Drawing.Point(88, 162);
-            this.btntimkiem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(116, 36);
-            this.btntimkiem.TabIndex = 1;
-            this.btntimkiem.Text = "Tìm kiếm";
-            this.btntimkiem.UseVisualStyleBackColor = true;
-            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
+            this.btnsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnsearch.Image = ((System.Drawing.Image) (resources.GetObject("btnsearch.Image")));
+            this.btnsearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnsearch.Location = new System.Drawing.Point(88, 162);
+            this.btnsearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(116, 36);
+            this.btnsearch.TabIndex = 1;
+            this.btnsearch.Text = "Tìm kiếm";
+            this.btnsearch.UseVisualStyleBackColor = true;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.rdosukien);
-            this.groupBox4.Controls.Add(this.rdoluat);
-            this.groupBox4.Controls.Add(this.btntimkiem);
-            this.groupBox4.Controls.Add(this.txttimkiem);
+            this.groupBox4.Controls.Add(this.rdoEvent);
+            this.groupBox4.Controls.Add(this.rdoRule);
+            this.groupBox4.Controls.Add(this.btnsearch);
+            this.groupBox4.Controls.Add(this.txtSearch);
             this.groupBox4.Location = new System.Drawing.Point(528, 383);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox4.Name = "groupBox4";
@@ -301,14 +302,14 @@ namespace HCG_Nhom4
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tìm kiếm";
             // 
-            // txttimkiem
+            // txtSearch
             // 
-            this.txttimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.txttimkiem.Location = new System.Drawing.Point(75, 121);
-            this.txttimkiem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(156, 23);
-            this.txttimkiem.TabIndex = 0;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.txtSearch.Location = new System.Drawing.Point(75, 121);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(156, 23);
+            this.txtSearch.TabIndex = 0;
             // 
             // panel1
             // 
@@ -323,8 +324,21 @@ namespace HCG_Nhom4
             this.panel1.Size = new System.Drawing.Size(886, 613);
             this.panel1.TabIndex = 1;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = ((System.Drawing.Image) (resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(240, 196);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(81, 40);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Tải lại";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnRefresh);
             this.groupBox3.Controls.Add(this.btnupdate);
             this.groupBox3.Controls.Add(this.btnremove);
             this.groupBox3.Controls.Add(this.btnadd);
@@ -352,9 +366,9 @@ namespace HCG_Nhom4
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RuleViewForm";
             this.Text = "RuleViewForm";
-            ((System.ComponentModel.ISupportInitialize) (this.dgvluat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dgvRule)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.dgvsukien2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dgvEvent)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -364,15 +378,17 @@ namespace HCG_Nhom4
             this.ResumeLayout(false);
         }
 
+        private System.Windows.Forms.Button btnRefresh;
+
         #endregion
 
         private System.Windows.Forms.DataGridViewTextBoxColumn nd;
-        private System.Windows.Forms.DataGridView dgvluat;
+        private System.Windows.Forms.DataGridView dgvRule;
         private System.Windows.Forms.DataGridViewTextBoxColumn maluat;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn noidung;
         private System.Windows.Forms.DataGridViewTextBoxColumn masukien;
-        private System.Windows.Forms.DataGridView dgvsukien2;
+        private System.Windows.Forms.DataGridView dgvEvent;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnremove;
@@ -383,11 +399,11 @@ namespace HCG_Nhom4
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton rdosukien;
-        private System.Windows.Forms.RadioButton rdoluat;
-        private System.Windows.Forms.Button btntimkiem;
+        private System.Windows.Forms.RadioButton rdoEvent;
+        private System.Windows.Forms.RadioButton rdoRule;
+        private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txttimkiem;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox3;
     }

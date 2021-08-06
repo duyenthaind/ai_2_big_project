@@ -30,42 +30,42 @@ namespace HCG_Nhom4
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventViewForm));
-            this.txtsukien = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.dgvsukien = new System.Windows.Forms.DataGridView();
-            this.btnupdate = new System.Windows.Forms.Button();
-            this.btnremove = new System.Windows.Forms.Button();
-            this.btnadd = new System.Windows.Forms.Button();
-            this.txtmota = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dgvMain = new System.Windows.Forms.DataGridView();
             this.masukien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhomsukien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnupdate = new System.Windows.Forms.Button();
+            this.btnremove = new System.Windows.Forms.Button();
+            this.btnadd = new System.Windows.Forms.Button();
+            this.txtContent = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.dgvsukien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dgvMain)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtsukien
+            // txtId
             // 
-            this.txtsukien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.txtsukien.Location = new System.Drawing.Point(246, 115);
-            this.txtsukien.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtsukien.Name = "txtsukien";
-            this.txtsukien.Size = new System.Drawing.Size(362, 23);
-            this.txtsukien.TabIndex = 1;
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.txtId.Location = new System.Drawing.Point(246, 115);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(362, 23);
+            this.txtId.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.cbCategory);
-            this.panel1.Controls.Add(this.dgvsukien);
+            this.panel1.Controls.Add(this.dgvMain);
             this.panel1.Controls.Add(this.btnupdate);
             this.panel1.Controls.Add(this.btnremove);
             this.panel1.Controls.Add(this.btnadd);
-            this.panel1.Controls.Add(this.txtmota);
-            this.panel1.Controls.Add(this.txtsukien);
+            this.panel1.Controls.Add(this.txtContent);
+            this.panel1.Controls.Add(this.txtId);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -85,18 +85,42 @@ namespace HCG_Nhom4
             this.cbCategory.Size = new System.Drawing.Size(362, 25);
             this.cbCategory.TabIndex = 4;
             // 
-            // dgvsukien
+            // dgvMain
             // 
-            this.dgvsukien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvsukien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.masukien, this.noidung, this.nhomsukien});
-            this.dgvsukien.Location = new System.Drawing.Point(30, 289);
-            this.dgvsukien.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvsukien.Name = "dgvsukien";
-            this.dgvsukien.RowHeadersWidth = 51;
-            this.dgvsukien.RowTemplate.Height = 24;
-            this.dgvsukien.Size = new System.Drawing.Size(790, 278);
-            this.dgvsukien.TabIndex = 3;
-            this.dgvsukien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsukien_CellClick);
+            this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.masukien, this.noidung, this.nhomsukien});
+            this.dgvMain.Location = new System.Drawing.Point(30, 289);
+            this.dgvMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvMain.Name = "dgvMain";
+            this.dgvMain.RowHeadersWidth = 51;
+            this.dgvMain.RowTemplate.Height = 24;
+            this.dgvMain.Size = new System.Drawing.Size(790, 278);
+            this.dgvMain.TabIndex = 3;
+            this.dgvMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsukien_CellClick);
+            // 
+            // masukien
+            // 
+            this.masukien.DataPropertyName = "id";
+            this.masukien.HeaderText = "Sự kiên";
+            this.masukien.MinimumWidth = 6;
+            this.masukien.Name = "masukien";
+            this.masukien.Width = 200;
+            // 
+            // noidung
+            // 
+            this.noidung.DataPropertyName = "content";
+            this.noidung.HeaderText = "Mô tả";
+            this.noidung.MinimumWidth = 6;
+            this.noidung.Name = "noidung";
+            this.noidung.Width = 400;
+            // 
+            // nhomsukien
+            // 
+            this.nhomsukien.DataPropertyName = "categoryId";
+            this.nhomsukien.HeaderText = "Nhóm sự kiện";
+            this.nhomsukien.MinimumWidth = 6;
+            this.nhomsukien.Name = "nhomsukien";
+            this.nhomsukien.Width = 400;
             // 
             // btnupdate
             // 
@@ -140,14 +164,14 @@ namespace HCG_Nhom4
             this.btnadd.UseVisualStyleBackColor = true;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
-            // txtmota
+            // txtContent
             // 
-            this.txtmota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.txtmota.Location = new System.Drawing.Point(246, 158);
-            this.txtmota.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtmota.Name = "txtmota";
-            this.txtmota.Size = new System.Drawing.Size(362, 23);
-            this.txtmota.TabIndex = 1;
+            this.txtContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.txtContent.Location = new System.Drawing.Point(246, 158);
+            this.txtContent.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtContent.Name = "txtContent";
+            this.txtContent.Size = new System.Drawing.Size(362, 23);
+            this.txtContent.TabIndex = 1;
             // 
             // label3
             // 
@@ -179,30 +203,6 @@ namespace HCG_Nhom4
             this.label1.TabIndex = 0;
             this.label1.Text = "Sự kiện";
             // 
-            // masukien
-            // 
-            this.masukien.DataPropertyName = "id";
-            this.masukien.HeaderText = "Sự kiên";
-            this.masukien.MinimumWidth = 6;
-            this.masukien.Name = "masukien";
-            this.masukien.Width = 200;
-            // 
-            // noidung
-            // 
-            this.noidung.DataPropertyName = "content";
-            this.noidung.HeaderText = "Mô tả";
-            this.noidung.MinimumWidth = 6;
-            this.noidung.Name = "noidung";
-            this.noidung.Width = 400;
-            // 
-            // nhomsukien
-            // 
-            this.nhomsukien.DataPropertyName = "categoryId";
-            this.nhomsukien.HeaderText = "Nhóm sự kiện";
-            this.nhomsukien.MinimumWidth = 6;
-            this.nhomsukien.Name = "nhomsukien";
-            this.nhomsukien.Width = 400;
-            // 
             // EventViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,7 +215,7 @@ namespace HCG_Nhom4
             this.Load += new System.EventHandler(this.EventViewForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.dgvsukien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dgvMain)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -223,16 +223,16 @@ namespace HCG_Nhom4
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtsukien;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvsukien;
+        private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.DataGridViewTextBoxColumn masukien;
         private System.Windows.Forms.DataGridViewTextBoxColumn noidung;
         private System.Windows.Forms.DataGridViewTextBoxColumn nhomsukien;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnremove;
         private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.TextBox txtmota;
+        private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
