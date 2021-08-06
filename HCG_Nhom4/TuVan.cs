@@ -13,19 +13,36 @@ namespace HCG_Nhom4
 {
     public partial class TuVan : Form
     {
-        private List<string> listMaNganh = new List<string>();
-        private List<string> listTenNganh = new List<string>();
+        private List<string> listSubjectId = new List<string>();
+        private List<string> listSubjectName = new List<string>();
         private List<String> start = null;
+
+        private EventDAO eventDao = new EventDAO();
 
         public TuVan()
         {
             InitializeComponent();
         }
 
+        public void load()
+        {
+            btnchitiet.Enabled = false;
+            dgvdulieu.DataSource = eventDao.LoadData();
+            var eventData = eventDao.GetDataByCategoryName("Ngành");
+            for (int i = 0; i < eventData.Rows.Count; i++)
+            {
+                listSubjectId.Add(eventData.Rows[i][0].ToString());
+                listSubjectName.Add(eventData.Rows[i][1].ToString());
+            }
+        }
+
         private void btnchon_Click(object sender, EventArgs e)
         {
-            lstdulieu.Items.Add(dgvdulieu.CurrentRow.Cells[0].Value.ToString() + ": " +
-                                dgvdulieu.CurrentRow.Cells[1].Value.ToString());
+            if (dgvdulieu.CurrentRow != null)
+            {
+                lstdulieu.Items.Add(dgvdulieu.CurrentRow.Cells[0].Value.ToString() + ": " +
+                                    dgvdulieu.CurrentRow.Cells[1].Value.ToString());
+            }
         }
 
         private void btnhuy_Click(object sender, EventArgs e)
@@ -37,21 +54,12 @@ namespace HCG_Nhom4
         {
             lstdulieu.Items.Clear();
             lstketqua.Items.Clear();
+            btnchitiet.Enabled = false;
         }
 
         private void TuVan_Load(object sender, EventArgs e)
         {
-            btnchitiet.Enabled = false;
-            Event_Controller sukien = new Event_Controller();
-            DataTable tb = new DataTable();
-            tb = sukien.loadDuLieu();
-            dgvdulieu.DataSource = tb;
-            DataTable tbTruong = sukien.getNganh();
-            for (int i = 0; i < tbTruong.Rows.Count; i++)
-            {
-                listMaNganh.Add(tbTruong.Rows[i][0].ToString());
-                listTenNganh.Add(tbTruong.Rows[i][1].ToString());
-            }
+            load();
         }
 
         private void btntuvan_Click(object sender, EventArgs e)
@@ -59,7 +67,7 @@ namespace HCG_Nhom4
             lstketqua.Items.Clear();
             var process = new Process();
             process.Load();
-            progressBar.Maximum = listMaNganh.Count - 1;
+            progressBar.Maximum = listSubjectId.Count - 1;
             progressBar.Minimum = 0;
             if (lstdulieu.Items.Count == 0)
             {
@@ -79,9 +87,9 @@ namespace HCG_Nhom4
                     start.Add(r[0]);
                 }
 
-                for (int i = 0; i < listMaNganh.Count; i++)
+                for (int i = 0; i < listSubjectId.Count; i++)
                     progressBar.Value = i;
-                List<int> listSubIndices = process.DoProcess(start, listMaNganh);
+                List<int> listSubIndices = process.DoProcess(start, listSubjectId);
                 if (listSubIndices.Count == 0)
                 {
                     lstketqua.Items.Add("Các dữ kiện chưa đủ để đưa ra ngành nghề phù hợp với bạn!");
@@ -92,7 +100,7 @@ namespace HCG_Nhom4
                     for (int i = 0; i < listSubIndices.Count; i++)
                     {
                         int value = listSubIndices[i];
-                        lstketqua.Items.Add(listTenNganh[value]);
+                        lstketqua.Items.Add(listSubjectName[value]);
                     }
                 }
             }
@@ -100,7 +108,11 @@ namespace HCG_Nhom4
 
         private void btnchitiet_Click(object sender, EventArgs e)
         {
-            String a = lstketqua.SelectedItem.ToString();
+            var a = lstketqua.SelectedItem.ToString();
+            if (a == null || a == "")
+            {
+                return;
+            }
             switch (a)
             {
                 case "Luật sư":

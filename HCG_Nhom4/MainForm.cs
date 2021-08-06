@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace HCG_Nhom4
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private Button currentButton;
         private Random random;
         private int tempIndex;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        private Color Selectmau()
+        private Color SelectRandomColor()
         {
             int index = random.Next(Colors.ColorList.Count);
             while (tempIndex == index)
@@ -41,7 +41,7 @@ namespace HCG_Nhom4
                 if (currentButton != (Button) btnSender)
                 {
                     DisableButton();
-                    Color color = Selectmau();
+                    Color color = SelectRandomColor();
                     currentButton = (Button) btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
@@ -69,7 +69,7 @@ namespace HCG_Nhom4
             }
         }
 
-        private void btntuvan_Click(object sender, EventArgs e)
+        private void btnAdvise_Click(object sender, EventArgs e)
         {
             lbltitle.Text = "Tư Vấn";
             ActivateButton(sender);
@@ -78,9 +78,10 @@ namespace HCG_Nhom4
             panelview.Controls.Add(frmtuvan);
             frmtuvan.FormBorderStyle = FormBorderStyle.None;
             frmtuvan.Show();
+            frmtuvan.load();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             random = new Random();
             panelview.Controls.Clear();
@@ -89,6 +90,7 @@ namespace HCG_Nhom4
             frmtuvan.BringToFront();
             frmtuvan.FormBorderStyle = FormBorderStyle.None;
             frmtuvan.Show();
+            frmtuvan.load();
         }
 
         private void btnsukien_Click(object sender, EventArgs e)

@@ -1,7 +1,7 @@
 ﻿
 namespace HCG_Nhom4
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,15 @@ namespace HCG_Nhom4
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbltitle = new System.Windows.Forms.Label();
             this.panelview = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.btntuvan = new System.Windows.Forms.Button();
-            this.btnsukien = new System.Windows.Forms.Button();
-            this.btntapluat = new System.Windows.Forms.Button();
+            this.btnAdvise = new System.Windows.Forms.Button();
+            this.btnEvent = new System.Windows.Forms.Button();
+            this.btnRule = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelmenu.SuspendLayout();
@@ -104,9 +103,9 @@ namespace HCG_Nhom4
             // 
             this.panelmenu.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (51)))), ((int) (((byte) (51)))), ((int) (((byte) (76)))));
             this.panelmenu.Controls.Add(this.panel3);
-            this.panelmenu.Controls.Add(this.btntuvan);
-            this.panelmenu.Controls.Add(this.btnsukien);
-            this.panelmenu.Controls.Add(this.btntapluat);
+            this.panelmenu.Controls.Add(this.btnAdvise);
+            this.panelmenu.Controls.Add(this.btnEvent);
+            this.panelmenu.Controls.Add(this.btnRule);
             this.panelmenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelmenu.Location = new System.Drawing.Point(0, 0);
             this.panelmenu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -114,58 +113,55 @@ namespace HCG_Nhom4
             this.panelmenu.Size = new System.Drawing.Size(208, 552);
             this.panelmenu.TabIndex = 3;
             // 
-            // btntuvan
+            // btnAdvise
             // 
-            this.btntuvan.FlatAppearance.BorderSize = 0;
-            this.btntuvan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btntuvan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btntuvan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btntuvan.Image = ((System.Drawing.Image) (resources.GetObject("btntuvan.Image")));
-            this.btntuvan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btntuvan.Location = new System.Drawing.Point(0, 81);
-            this.btntuvan.Margin = new System.Windows.Forms.Padding(0);
-            this.btntuvan.Name = "btntuvan";
-            this.btntuvan.Size = new System.Drawing.Size(208, 81);
-            this.btntuvan.TabIndex = 1;
-            this.btntuvan.Text = "Tư Vấn";
-            this.btntuvan.UseVisualStyleBackColor = true;
-            this.btntuvan.Click += new System.EventHandler(this.btntuvan_Click);
+            this.btnAdvise.FlatAppearance.BorderSize = 0;
+            this.btnAdvise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdvise.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnAdvise.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAdvise.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdvise.Location = new System.Drawing.Point(0, 81);
+            this.btnAdvise.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAdvise.Name = "btnAdvise";
+            this.btnAdvise.Size = new System.Drawing.Size(208, 81);
+            this.btnAdvise.TabIndex = 1;
+            this.btnAdvise.Text = "Tư Vấn";
+            this.btnAdvise.UseVisualStyleBackColor = true;
+            this.btnAdvise.Click += new System.EventHandler(this.btnAdvise_Click);
             // 
-            // btnsukien
+            // btnEvent
             // 
-            this.btnsukien.FlatAppearance.BorderSize = 0;
-            this.btnsukien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsukien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnsukien.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnsukien.Image = ((System.Drawing.Image) (resources.GetObject("btnsukien.Image")));
-            this.btnsukien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsukien.Location = new System.Drawing.Point(0, 162);
-            this.btnsukien.Margin = new System.Windows.Forms.Padding(0);
-            this.btnsukien.Name = "btnsukien";
-            this.btnsukien.Size = new System.Drawing.Size(208, 81);
-            this.btnsukien.TabIndex = 2;
-            this.btnsukien.Text = "Sự Kiện";
-            this.btnsukien.UseVisualStyleBackColor = true;
-            this.btnsukien.Click += new System.EventHandler(this.btnsukien_Click);
+            this.btnEvent.FlatAppearance.BorderSize = 0;
+            this.btnEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnEvent.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnEvent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvent.Location = new System.Drawing.Point(0, 162);
+            this.btnEvent.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEvent.Name = "btnEvent";
+            this.btnEvent.Size = new System.Drawing.Size(208, 81);
+            this.btnEvent.TabIndex = 2;
+            this.btnEvent.Text = "Sự Kiện";
+            this.btnEvent.UseVisualStyleBackColor = true;
+            this.btnEvent.Click += new System.EventHandler(this.btnsukien_Click);
             // 
-            // btntapluat
+            // btnRule
             // 
-            this.btntapluat.FlatAppearance.BorderSize = 0;
-            this.btntapluat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btntapluat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btntapluat.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btntapluat.Image = ((System.Drawing.Image) (resources.GetObject("btntapluat.Image")));
-            this.btntapluat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btntapluat.Location = new System.Drawing.Point(0, 243);
-            this.btntapluat.Margin = new System.Windows.Forms.Padding(0);
-            this.btntapluat.Name = "btntapluat";
-            this.btntapluat.Size = new System.Drawing.Size(208, 81);
-            this.btntapluat.TabIndex = 3;
-            this.btntapluat.Text = "Tập Luật";
-            this.btntapluat.UseVisualStyleBackColor = true;
-            this.btntapluat.Click += new System.EventHandler(this.btntapluat_Click);
+            this.btnRule.FlatAppearance.BorderSize = 0;
+            this.btnRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnRule.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnRule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRule.Location = new System.Drawing.Point(0, 243);
+            this.btnRule.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRule.Name = "btnRule";
+            this.btnRule.Size = new System.Drawing.Size(208, 81);
+            this.btnRule.TabIndex = 3;
+            this.btnRule.Text = "Tập Luật";
+            this.btnRule.UseVisualStyleBackColor = true;
+            this.btnRule.Click += new System.EventHandler(this.btntapluat_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,10 +169,10 @@ namespace HCG_Nhom4
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelview);
             this.Controls.Add(this.panelmenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "MainForm";
+            this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -193,9 +189,9 @@ namespace HCG_Nhom4
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel panelmenu;
-        private System.Windows.Forms.Button btntuvan;
-        private System.Windows.Forms.Button btnsukien;
-        private System.Windows.Forms.Button btntapluat;
+        private System.Windows.Forms.Button btnAdvise;
+        private System.Windows.Forms.Button btnEvent;
+        private System.Windows.Forms.Button btnRule;
     }
 }
 
