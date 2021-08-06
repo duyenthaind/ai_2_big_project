@@ -11,7 +11,7 @@ namespace HCG_Nhom4
         private const string QueryGetAllData = "select id, content from dh_rule";
         private const string QueryAllRuleContent = "select content from dh_rule";
         private const string QueryAllRuleByKey = "select *from dh_rule where id=@id";
-        private const string QueryInsertRule = "insert into dh_rule(id,name) values (@id, @content)";
+        private const string QueryInsertRule = "insert into dh_rule(id,content) values (@id, @content)";
         private const string QueryUpdateRule = "update dh_rule set content=@content where id=@id";
         private const string QueryDeleteRule = "delete from dh_rule where id=@id";
 
