@@ -1,7 +1,7 @@
 ﻿
 namespace HCG_Nhom4
 {
-    partial class SuKien
+    partial class EventViewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace HCG_Nhom4
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuKien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventViewForm));
             this.txtsukien = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbCategory = new System.Windows.Forms.ComboBox();
@@ -203,16 +203,16 @@ namespace HCG_Nhom4
             this.nhomsukien.Name = "nhomsukien";
             this.nhomsukien.Width = 400;
             // 
-            // SuKien
+            // EventViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 552);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "SuKien";
-            this.Text = "SuKien";
-            this.Load += new System.EventHandler(this.SuKien_Load);
+            this.Name = "EventViewForm";
+            this.Text = "EventViewForm";
+            this.Load += new System.EventHandler(this.EventViewForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.dgvsukien)).EndInit();

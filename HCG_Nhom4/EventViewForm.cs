@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace HCG_Nhom4
 {
-    public partial class SuKien : Form
+    public partial class EventViewForm : Form
     {
-        Event_Controller sukien = new Event_Controller();
         private EventDAO eventDao = new EventDAO();
         private CategoryDAO categoryDao = new CategoryDAO();
 
-        public SuKien()
+        public EventViewForm()
         {
             InitializeComponent();
         }
@@ -27,7 +26,7 @@ namespace HCG_Nhom4
             load();
         }
 
-        private void SuKien_Load(object sender, EventArgs e)
+        private void EventViewForm_Load(object sender, EventArgs e)
         {
            load();
         }

@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace HCG_Nhom4
 {
-    public partial class Form2 : Form
+    public partial class StartForm : Form
     {
-        public Form2()
+        public StartForm()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainForm f1 = new MainForm();
+            var f1 = new MainForm();
             this.Visible = false;
             f1.Show();
         }
