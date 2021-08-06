@@ -28,3 +28,4 @@ hs_err_pid*
 *.iml
 .idea/
 /HCG_Nhom4/obj/
+/HCG_Nhom4/obj/*
