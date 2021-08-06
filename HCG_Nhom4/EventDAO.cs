@@ -22,7 +22,7 @@ namespace HCG_Nhom4
         private const string QueryDelete = "delete from dh_event where id = @id";
 
         private const string QueryLoadData =
-            "select *from dh_event where category_id <> (select id from dh_category where name = @name)";
+            "select e.id as id, e.content as content, c.name as name from dh_event e join dh_category c on e.category_id = c.id where c.name != @name";
 
         private const string QueryLoadContentByCategory =
             "select id,content from dh_event where category_id = (select id from dh_category where name = @name)";
@@ -61,7 +61,7 @@ namespace HCG_Nhom4
         public DataTable LoadData()
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add("name", "N'Ngành'");
+            parameters.Add("name", "Ngành");
             return FetchData(QueryLoadData, parameters);
         }
 
@@ -87,7 +87,7 @@ namespace HCG_Nhom4
         public DataTable GetDataByCategoryName(string content)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add("content", "N'" + content + "'");
+            parameters.Add("name", content);
             return FetchData(QueryLoadContentByCategory, parameters);
         }
 

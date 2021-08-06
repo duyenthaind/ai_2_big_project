@@ -206,7 +206,7 @@ namespace HCG_Nhom4
             // 
             // masukien
             // 
-            this.masukien.DataPropertyName = "masukien";
+            this.masukien.DataPropertyName = "id";
             this.masukien.FillWeight = 70F;
             this.masukien.HeaderText = "Sự kiên";
             this.masukien.MinimumWidth = 6;
@@ -215,7 +215,7 @@ namespace HCG_Nhom4
             // 
             // noidung
             // 
-            this.noidung.DataPropertyName = "noidung";
+            this.noidung.DataPropertyName = "content";
             this.noidung.HeaderText = "Mô tả";
             this.noidung.MinimumWidth = 6;
             this.noidung.Name = "noidung";
@@ -223,7 +223,7 @@ namespace HCG_Nhom4
             // 
             // nhomsukien
             // 
-            this.nhomsukien.DataPropertyName = "nhomsukien";
+            this.nhomsukien.DataPropertyName = "name";
             this.nhomsukien.HeaderText = "Nhóm Sự kiện";
             this.nhomsukien.MinimumWidth = 6;
             this.nhomsukien.Name = "nhomsukien";

@@ -19,7 +19,7 @@ namespace HCG_Nhom4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
+            MainForm f1 = new MainForm();
             this.Visible = false;
             f1.Show();
         }

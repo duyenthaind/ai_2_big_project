@@ -8,16 +8,15 @@ namespace HCG_Nhom4
 {
     public class Process
     {
+        private RuleDAO ruleDao = new RuleDAO();
         List<Rule> bin = new List<Rule>();
         List<Rule> SAT = new List<Rule>();
         public void Load()
         {
-            Rule_Controller kn = new Rule_Controller();
-            string qr = "select noidung from tapluat";
-            DataTable tbLuat = kn.getnoidung();
-            for (int i = 0; i < tbLuat.Rows.Count; i++)
+            var ruleData = ruleDao.GetAllContent();
+            for (int i = 0; i < ruleData.Rows.Count; i++)
             {
-                string buff = tbLuat.Rows[i][0].ToString();
+                string buff = ruleData.Rows[i][0].ToString();
                 Rule luatTG = new Rule();
                 char[] delimiterChars = { '>' };
                 string[] tg = buff.Split(delimiterChars);
