@@ -23,9 +23,9 @@ namespace HCG_Nhom4
         public void load()
         {
             var dataTableEventContent = eventDao.GetOnlyEventData();
-            dgvsukien2.DataSource = dataTableEventContent;
+            dgvEvent.DataSource = dataTableEventContent;
             var dataTableRule = ruleDao.GetAllData();
-            dgvluat.DataSource = dataTableRule;
+            dgvRule.DataSource = dataTableRule;
         }
         private void btnadd_Click(object sender, EventArgs e)
         {
@@ -47,38 +47,43 @@ namespace HCG_Nhom4
             int index = e.RowIndex;
             if (index > -1)
             {
-                txtRuleId.Text = dgvluat.Rows[index].Cells[0].Value.ToString();
-                txtRuleContent.Text = dgvluat.Rows[index].Cells[1].Value.ToString();
+                txtRuleId.Text = dgvRule.Rows[index].Cells[0].Value.ToString();
+                txtRuleContent.Text = dgvRule.Rows[index].Cells[1].Value.ToString();
             }
         }
 
-        private void btntimkiem_Click(object sender, EventArgs e)
+        private void btnsearch_Click(object sender, EventArgs e)
         {
-            if (rdoluat.Checked == false && rdosukien.Checked == false)
+            if (rdoRule.Checked == false && rdoEvent.Checked == false)
             {
                 MessageBox.Show("Vui lòng chọn phương thức tìm kiếm");
                 return;
             }
-            if (txttimkiem.Text.Trim() == "")
+            if (txtSearch.Text.Trim() == "")
             {
                 MessageBox.Show("vui lòng nhập thông tin tìm kiếm");
                 return;
             }
-            if (rdoluat.Checked)
+            if (rdoRule.Checked)
             {
-                var ruleFounds = ruleDao.GetDataByKey(txttimkiem.Text);
-                dgvluat.DataSource = ruleFounds;
+                var ruleFounds = ruleDao.GetDataByKey(txtSearch.Text);
+                dgvRule.DataSource = ruleFounds;
             }
             else
             {
-                var eventFounds = eventDao.GetDataByKey(txttimkiem.Text);
-                dgvsukien2.DataSource = eventFounds;
+                var eventFounds = eventDao.GetDataByKey(txtSearch.Text);
+                dgvEvent.DataSource = eventFounds;
             }
         }
 
         private void btnremove_Click(object sender, EventArgs e)
         {
             ruleDao.Delete(txtRuleId.Text);
+            load();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
             load();
         }
     }

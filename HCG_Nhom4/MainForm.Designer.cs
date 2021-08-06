@@ -143,7 +143,7 @@ namespace HCG_Nhom4
             this.btnEvent.TabIndex = 2;
             this.btnEvent.Text = "Sự Kiện";
             this.btnEvent.UseVisualStyleBackColor = true;
-            this.btnEvent.Click += new System.EventHandler(this.btnsukien_Click);
+            this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click);
             // 
             // btnRule
             // 
@@ -159,7 +159,7 @@ namespace HCG_Nhom4
             this.btnRule.TabIndex = 3;
             this.btnRule.Text = "Tập Luật";
             this.btnRule.UseVisualStyleBackColor = true;
-            this.btnRule.Click += new System.EventHandler(this.btntapluat_Click);
+            this.btnRule.Click += new System.EventHandler(this.btnRule_Click);
             // 
             // MainForm
             // 

@@ -93,7 +93,7 @@ namespace HCG_Nhom4
             frmAdvisorView.load();
         }
 
-        private void btnsukien_Click(object sender, EventArgs e)
+        private void btnEvent_Click(object sender, EventArgs e)
         {
             lbltitle.Text = "Sự Kiện";
             ActivateButton(sender);
@@ -105,7 +105,7 @@ namespace HCG_Nhom4
             frameEventView.load();
         }
 
-        private void btntapluat_Click(object sender, EventArgs e)
+        private void btnRule_Click(object sender, EventArgs e)
         {
             lbltitle.Text = "Tập Luật";
             ActivateButton(sender);

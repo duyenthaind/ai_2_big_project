@@ -14,21 +14,21 @@ namespace HCG_Nhom4
         public void Load()
         {
             var ruleData = ruleDao.GetAllContent();
-            for (int i = 0; i < ruleData.Rows.Count; i++)
+            for (var i = 0; i < ruleData.Rows.Count; i++)
             {
-                string buff = ruleData.Rows[i][0].ToString();
-                Rule luatTG = new Rule();
+                var buff = ruleData.Rows[i][0].ToString();
+                var ruleTemp = new Rule();
                 char[] delimiterChars = { '>' };
-                string[] tg = buff.Split(delimiterChars);
+                var arrTemp = buff.Split(delimiterChars);
 
-                //ben trai
+                //on the left
                 char[] delimiterChars1 = { '^' };
-                string[] left = tg[0].Split(delimiterChars1);
-                int j = 0;
-                string buff1 = left[0];
+                var left = arrTemp[0].Split(delimiterChars1);
+                var j = 0;
+                var buff1 = left[0];
                 while (buff1 != null)
                 {
-                    luatTG.left.Add(buff1);
+                    ruleTemp.left.Add(buff1);
                     j++;
                     try
                     {
@@ -40,14 +40,14 @@ namespace HCG_Nhom4
 
                 j = 0;
 
-                //ben phai
+                //on the right
                 char[] delimiterChars2 = { ',' };
-                string[] right = tg[1].Split(delimiterChars2);
+                var right = arrTemp[1].Split(delimiterChars2);
 
                 buff1 = right[0];
                 while (buff1 != null)
                 {
-                    luatTG.right.Add(buff1);
+                    ruleTemp.right.Add(buff1);
                     j++;
                     try
                     {
@@ -56,7 +56,7 @@ namespace HCG_Nhom4
                     catch { buff1 = null; };
                 }
 
-                bin.Add(luatTG);
+                bin.Add(ruleTemp);
             }
 
         }
@@ -66,15 +66,9 @@ namespace HCG_Nhom4
             var temp = "";
             foreach (var r in listRules)
             {
-                foreach (var s in r.left)
-                {
-                    temp += s + "^";
-                }
+                temp = r.left.Aggregate(temp, (current, s) => current + (s + "^"));
                 temp += "->";
-                foreach (var s in r.right)
-                {
-                    temp += s + "^";
-                }
+                temp = r.right.Aggregate(temp, (current, s) => current + (s + "^"));
                 temp += "\n";
 
             }
@@ -90,18 +84,18 @@ namespace HCG_Nhom4
         public void FindSAT(List<string> temp, List<Rule> listRules)
         {
             bool isChecked;
-            for (int i = 0; i < listRules.Count; i++)
+            foreach (var t in listRules)
             {
-
                 isChecked = true;
-                for (int j = 0; j < listRules[i].left.Count; j++)
-                    if (temp.Contains(listRules[i].left[j]))
+                foreach (var t1 in t.left)
+                    if (temp.Contains(t1))
                         isChecked = isChecked && true;
                     else
                         isChecked = isChecked && false;
+
                 if (isChecked)
                 {
-                    SAT.Add(listRules[i]);
+                    SAT.Add(t);
                 }
             }
         }
@@ -121,23 +115,19 @@ namespace HCG_Nhom4
             {
 
                 //lay luat SAT đầu tiên ra ap dung
-                Rule r = SAT[0];
+                var r = SAT[0];
 
                 //them cai chua co vao TG
-                foreach (string tg in r.right)
+                foreach (var tg in r.right.Where(tg => !temp.Contains(tg)))
                 {
-                    if (!temp.Contains(tg))
-                    {
-                        temp.Add(tg);
-                        Console.WriteLine(tg);
-                    }
-
+                    temp.Add(tg);
+                    Console.WriteLine(tg);
                 }
                 SAT.Remove(r);
                 listRules.Remove(r);
                 FindSAT(temp, listRules);
             }
-            for (int i = 0; i < result.Count; i++)
+            for (var i = 0; i < result.Count; i++)
             {
                 if (start.Contains(result[i]))
                 {
