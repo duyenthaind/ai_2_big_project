@@ -41,7 +41,7 @@ namespace HCG_Nhom4
                 if (currentButton != (Button) btnSender)
                 {
                     DisableButton();
-                    Color color = SelectRandomColor();
+                    var color = SelectRandomColor();
                     currentButton = (Button) btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
@@ -74,23 +74,23 @@ namespace HCG_Nhom4
             lbltitle.Text = "Tư Vấn";
             ActivateButton(sender);
             panelview.Controls.Clear();
-            TuVan frmtuvan = new TuVan() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
-            panelview.Controls.Add(frmtuvan);
-            frmtuvan.FormBorderStyle = FormBorderStyle.None;
-            frmtuvan.Show();
-            frmtuvan.load();
+            var frmAdvisorView = new AdvisorViewForm() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
+            panelview.Controls.Add(frmAdvisorView);
+            frmAdvisorView.FormBorderStyle = FormBorderStyle.None;
+            frmAdvisorView.Show();
+            frmAdvisorView.load();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             random = new Random();
             panelview.Controls.Clear();
-            TuVan frmtuvan = new TuVan() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
-            panelview.Controls.Add(frmtuvan);
-            frmtuvan.BringToFront();
-            frmtuvan.FormBorderStyle = FormBorderStyle.None;
-            frmtuvan.Show();
-            frmtuvan.load();
+            var frmAdvisorView = new AdvisorViewForm() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
+            panelview.Controls.Add(frmAdvisorView);
+            frmAdvisorView.BringToFront();
+            frmAdvisorView.FormBorderStyle = FormBorderStyle.None;
+            frmAdvisorView.Show();
+            frmAdvisorView.load();
         }
 
         private void btnsukien_Click(object sender, EventArgs e)
@@ -98,11 +98,11 @@ namespace HCG_Nhom4
             lbltitle.Text = "Sự Kiện";
             ActivateButton(sender);
             panelview.Controls.Clear();
-            SuKien frmsukien = new SuKien() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
-            panelview.Controls.Add(frmsukien);
-            frmsukien.FormBorderStyle = FormBorderStyle.None;
-            frmsukien.Show();
-            frmsukien.load();
+            var frameEventView = new EventViewForm() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
+            panelview.Controls.Add(frameEventView);
+            frameEventView.FormBorderStyle = FormBorderStyle.None;
+            frameEventView.Show();
+            frameEventView.load();
         }
 
         private void btntapluat_Click(object sender, EventArgs e)
@@ -110,11 +110,16 @@ namespace HCG_Nhom4
             lbltitle.Text = "Tập Luật";
             ActivateButton(sender);
             panelview.Controls.Clear();
-            TapLuat frmtapluat = new TapLuat() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
-            panelview.Controls.Add(frmtapluat);
-            frmtapluat.FormBorderStyle = FormBorderStyle.None;
-            frmtapluat.Show();
-            frmtapluat.load();
+            var frameRuleView = new RuleViewForm() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true};
+            panelview.Controls.Add(frameRuleView);
+            frameRuleView.FormBorderStyle = FormBorderStyle.None;
+            frameRuleView.Show();
+            frameRuleView.load();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

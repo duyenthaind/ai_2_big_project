@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace HCG_Nhom4
 {
-    public partial class TuVan : Form
+    public partial class AdvisorViewForm : Form
     {
         private List<string> listSubjectId = new List<string>();
         private List<string> listSubjectName = new List<string>();
@@ -19,7 +19,7 @@ namespace HCG_Nhom4
 
         private EventDAO eventDao = new EventDAO();
 
-        public TuVan()
+        public AdvisorViewForm()
         {
             InitializeComponent();
         }

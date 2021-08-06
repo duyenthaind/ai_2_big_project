@@ -1,7 +1,7 @@
 ﻿
 namespace HCG_Nhom4
 {
-    partial class TuVan
+    partial class AdvisorViewForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,7 +1,7 @@
 ﻿
 namespace HCG_Nhom4
 {
-    partial class TapLuat
+    partial class RuleViewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace HCG_Nhom4
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TapLuat));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RuleViewForm));
             this.dgvluat = new System.Windows.Forms.DataGridView();
             this.maluat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nd = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,8 +41,8 @@ namespace HCG_Nhom4
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnremove = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
-            this.txtmota = new System.Windows.Forms.TextBox();
-            this.txtluat = new System.Windows.Forms.TextBox();
+            this.txtRuleContent = new System.Windows.Forms.TextBox();
+            this.txtRuleId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -189,21 +189,21 @@ namespace HCG_Nhom4
             this.btnadd.UseVisualStyleBackColor = true;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
-            // txtmota
+            // txtRuleContent
             // 
-            this.txtmota.Location = new System.Drawing.Point(112, 89);
-            this.txtmota.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtmota.Name = "txtmota";
-            this.txtmota.Size = new System.Drawing.Size(183, 23);
-            this.txtmota.TabIndex = 1;
+            this.txtRuleContent.Location = new System.Drawing.Point(112, 89);
+            this.txtRuleContent.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtRuleContent.Name = "txtRuleContent";
+            this.txtRuleContent.Size = new System.Drawing.Size(183, 23);
+            this.txtRuleContent.TabIndex = 1;
             // 
-            // txtluat
+            // txtRuleId
             // 
-            this.txtluat.Location = new System.Drawing.Point(112, 54);
-            this.txtluat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtluat.Name = "txtluat";
-            this.txtluat.Size = new System.Drawing.Size(183, 23);
-            this.txtluat.TabIndex = 1;
+            this.txtRuleId.Location = new System.Drawing.Point(112, 54);
+            this.txtRuleId.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtRuleId.Name = "txtRuleId";
+            this.txtRuleId.Size = new System.Drawing.Size(183, 23);
+            this.txtRuleId.TabIndex = 1;
             // 
             // label3
             // 
@@ -328,8 +328,8 @@ namespace HCG_Nhom4
             this.groupBox3.Controls.Add(this.btnupdate);
             this.groupBox3.Controls.Add(this.btnremove);
             this.groupBox3.Controls.Add(this.btnadd);
-            this.groupBox3.Controls.Add(this.txtmota);
-            this.groupBox3.Controls.Add(this.txtluat);
+            this.groupBox3.Controls.Add(this.txtRuleContent);
+            this.groupBox3.Controls.Add(this.txtRuleId);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
@@ -343,15 +343,15 @@ namespace HCG_Nhom4
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin luật";
             // 
-            // TapLuat
+            // RuleViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 613);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "TapLuat";
-            this.Text = "TapLuat";
+            this.Name = "RuleViewForm";
+            this.Text = "RuleViewForm";
             ((System.ComponentModel.ISupportInitialize) (this.dgvluat)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.dgvsukien2)).EndInit();
@@ -377,8 +377,8 @@ namespace HCG_Nhom4
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnremove;
         private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.TextBox txtmota;
-        private System.Windows.Forms.TextBox txtluat;
+        private System.Windows.Forms.TextBox txtRuleContent;
+        private System.Windows.Forms.TextBox txtRuleId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

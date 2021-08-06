@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace HCG_Nhom4
 {
-    public partial class TapLuat : Form
+    public partial class RuleViewForm : Form
     {
         private EventDAO eventDao = new EventDAO();
         private RuleDAO ruleDao = new RuleDAO();
 
-        public TapLuat()
+        public RuleViewForm()
         {
             InitializeComponent();
         }
@@ -29,17 +29,17 @@ namespace HCG_Nhom4
         }
         private void btnadd_Click(object sender, EventArgs e)
         {
-            ruleDao.Insert(txtluat.Text, txtmota.Text);
-            TapLuat_Load(sender, e);
+            ruleDao.Insert(txtRuleId.Text, txtRuleContent.Text);
+            load();
         }
-        private void TapLuat_Load(object sender, EventArgs e)
+        private void RuleViewForm_Load(object sender, EventArgs e)
         {
             load();
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            ruleDao.Update(txtluat.Text, txtmota.Text);
-            TapLuat_Load(sender, e);
+            ruleDao.Update(txtRuleId.Text, txtRuleContent.Text);
+            load();
         }
 
         private void dgvluat_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -47,8 +47,8 @@ namespace HCG_Nhom4
             int index = e.RowIndex;
             if (index > -1)
             {
-                txtluat.Text = dgvluat.Rows[index].Cells[0].Value.ToString();
-                txtmota.Text = dgvluat.Rows[index].Cells[1].Value.ToString();
+                txtRuleId.Text = dgvluat.Rows[index].Cells[0].Value.ToString();
+                txtRuleContent.Text = dgvluat.Rows[index].Cells[1].Value.ToString();
             }
         }
 
@@ -78,8 +78,8 @@ namespace HCG_Nhom4
 
         private void btnremove_Click(object sender, EventArgs e)
         {
-            ruleDao.Delete(txtluat.Text);
-            TapLuat_Load(sender, e);
+            ruleDao.Delete(txtRuleId.Text);
+            load();
         }
     }
 }
