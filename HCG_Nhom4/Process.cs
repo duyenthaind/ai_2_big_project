@@ -61,20 +61,6 @@ namespace HCG_Nhom4
 
         }
 
-        public string OutputResults(List<Rule> listRules)
-        {
-            var temp = "";
-            foreach (var r in listRules)
-            {
-                temp = r.left.Aggregate(temp, (current, s) => current + (s + "^"));
-                temp += "->";
-                temp = r.right.Aggregate(temp, (current, s) => current + (s + "^"));
-                temp += "\n";
-
-            }
-            return temp;
-        } 
-
         /// <summary>
         /// hàm lấy ra 1 luật trong tập SAT để thực hiện việc suy diễn, lấy luật từ trái qua phải
         /// </summary>
